@@ -14,19 +14,20 @@ pipeline {
 
     stage('Instalar dependencias') {
       steps {
-        sh 'npm install'
+        bat 'npm install'
+        bat 'npx playwright install'
       }
     }
 
     stage('Ejecutar pruebas') {
       steps {
-        sh 'npm test'
+        bat 'npm test'
       }
     }
 
     stage('Generar reporte') {
       steps {
-        sh 'npm run report'
+        bat 'npm run report'
       }
     }
 
